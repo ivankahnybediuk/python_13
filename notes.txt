@@ -1,0 +1,47 @@
+Properties of first class functions:
+
+A function is an instance of the Object type.
+You can store the function in a variable.
+You can pass the function as a parameter to another function.
+You can return the function from a function.
+You can store them in data structures such as hash tables, lists, …
+
+
+def call_func(x, func):
+    print(func(x))
+def double(n): return 2*n
+def triple(n): return 3*n
+
+call_func(4, double)     ## => 8
+call_func(5, triple)     ## => 15
+
+operations = [double, triple]
+operations[0](2)     ## => 4
+operations[1](10)    ## => 30
+Создали список из функций и вызывали их по тиндексу в списке
+
+# Python program to illustrate functions
+# can be passed as arguments to other functions
+def shout(text):
+    return text.upper()
+
+def whisper(text):
+    return text.lower()
+
+def greet(func):
+    # storing the function in a variable
+    greeting = func("""Hi, I am created by a function
+                    passed as an argument.""")
+    print (greeting)
+
+greet(shout)
+greet(whisper)
+
+
+def create_adder(x):
+    def adder(y):
+        return x + y
+
+    return adder
+
+print(create_adder(15)(10))
