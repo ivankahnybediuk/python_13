@@ -1,33 +1,33 @@
-"""
-Task 1
-Write a Python program to detect the number of local variables declared in a function.
-"""
-def fun() :
-    x = 1
-    y = 2
-
-
-
-if __name__ == "__main__":
-    print(fun.__code__.co_nlocals)
-
-
-
-"""
-Task 2
-Write a Python program to access a function inside a function (Tips: use function, which returns another function)
-"""
-
-
-def say_hi(day_part):
-    def name_formating(name):
-        return f" Good {day_part},  {name.title()} !!!!"
-
-    return name_formating
-
-
-if __name__ == "__main__":
-    print(say_hi("morning")("ivanka"))
+# """
+# Task 1
+# Write a Python program to detect the number of local variables declared in a function.
+# """
+# def fun() :
+#     x = 1
+#     y = 2
+#
+#
+#
+# if __name__ == "__main__":
+#     print(fun.__code__.co_nlocals)
+#
+#
+#
+# """
+# Task 2
+# Write a Python program to access a function inside a function (Tips: use function, which returns another function)
+# """
+#
+#
+# def say_hi(day_part):
+#     def name_formating(name):
+#         return f" Good {day_part},  {name.title()} !!!!"
+#
+#     return name_formating
+#
+#
+# if __name__ == "__main__":
+#     print(say_hi("morning")("ivanka"))
 
 
 """
@@ -57,11 +57,11 @@ def choose_func(nums: list, func1, func2):
 
 
 def square_nums(nums):
-    return [num ** 2 for num in nums]
+    return list(map(lambda x: x**2, nums))
 
 
 def remove_negatives(nums):
-    return [num for num in nums if num > 0]
+    return list(filter(lambda x: x > 0, nums))
 
 
 if __name__ == "__main__":
